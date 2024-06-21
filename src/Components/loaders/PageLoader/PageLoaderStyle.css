@@ -1,0 +1,34 @@
+.preloader-wrapper {
+    position: fixed;
+    padding: 30px 20px;
+    margin-left: 0;
+    margin-top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+.preloader-wrapper::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.7);
+    content: "";
+    z-index: 99;
+}
+.cssloader {
+  position: relative;
+  z-index: 999;
+}
+
+.cssloader img{
+  max-width: 200px;
+}
+

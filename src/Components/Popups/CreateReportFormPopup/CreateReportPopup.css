@@ -1,0 +1,89 @@
+.createReportFormWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.formCreate {
+  width: 95%;
+  margin-bottom: 20px;
+}
+
+.errorMessageCreatePopUp {
+  color: red;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.creatingReportMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.creatingReportMessageTEXT{
+  
+  padding: 20px;
+  color: rgb(0, 102, 255);
+}
+.creatingReportMessageTEXT2{
+  padding: 4px;
+  color: rgb(251, 109, 109);
+}
+.spinner {
+  width: 67.2px; /* Increase the size */
+  height: 67.2px; /* Increase the size */
+  perspective: 134.4px; /* Increase the perspective */
+  margin-bottom: 20px; /* Space between spinner and text */
+}
+
+.spinner div {
+  width: 100%;
+  height: 100%;
+  background: #474bff;
+  position: absolute;
+  left: 50%;
+  transform-origin: left;
+  animation: spinner-16s03x 2s infinite;
+}
+
+.spinner div:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.spinner div:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.spinner div:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.spinner div:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.spinner div:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+@keyframes spinner-16s03x {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50%,
+  80% {
+    transform: rotateY(-180deg);
+  }
+
+  90%,
+  100% {
+    opacity: 0;
+    transform: rotateY(-180deg);
+  }
+}

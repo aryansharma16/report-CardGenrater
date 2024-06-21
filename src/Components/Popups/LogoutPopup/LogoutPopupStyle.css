@@ -1,0 +1,138 @@
+.popupWrapper.logoutPop{
+    z-index: 2100;
+}
+
+.LogoutPopup{
+    width: 400px;
+}
+
+.LogoutPopup .popupHeader{
+    border-bottom: none;
+    justify-content: flex-end;
+    padding: 15px 20px 0;
+}
+
+.LogoutPopup .close{
+    border: none;
+    padding: 0;
+}
+
+.LogoutPopup .popupBody{
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    min-height: max-content;
+    padding: 0 20px;
+    padding-bottom: 40px;
+}
+
+.popBodyWrap{
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    justify-content: center;
+}
+
+.logOutText{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    max-width: 200px;
+    display: block;
+    text-align: center;
+}
+
+.LogoutPopup .buttonWrapper{
+    justify-content: center;
+    width: 100%;
+}
+
+.LogoutPopup .buttonWrapper button{
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.popupWrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1200;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s;
+    z-index: 999;
+}
+
+.popupWrapper.active{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s;
+}
+
+.popupContainer{
+    width: 600px;
+    margin: auto;
+    background: var(--white);
+    border: 1px solid #EEEEEE;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.popupHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.popupBody{
+    padding: 20px;
+    /* max-height: 500px; */
+    max-height: calc(100vh - 160px);
+    overflow: auto;
+}
+
+.TwoSections{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.flexend{
+    justify-content: flex-end;
+}
+
+.popupFooter{
+    padding: 20px;
+    padding-top: 0;
+}
+
+.popupFooter button{
+    font-size: 14px;
+    padding: 10px 12px;
+}
+
+.buttonWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.close{
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border: 1px solid var(--grey2);
+    border-radius: 5px;
+    cursor: pointer;
+}

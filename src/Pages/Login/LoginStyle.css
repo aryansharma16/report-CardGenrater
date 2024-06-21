@@ -1,0 +1,122 @@
+.authenticationWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.authenticationLeft{
+    width: 100%;
+    max-width: 45%;
+    padding: 60px;
+    text-align: center;
+}
+
+.welcomeHeading{
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 120%;
+    color: var(--black);
+}
+
+.welcomeData{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--black4);
+    max-width: 315px;
+    display: inline-block;
+}
+
+.loginWrap{
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.loginWrap .formGroups label{
+    text-align: left;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--black1);
+}
+
+.loginWrap .formGroups:not(:first-child){
+    margin-top: 20px;
+}
+
+.loginWrap .formGroups input{
+    min-height: 52px;
+    font-weight: 500;
+}
+
+.loginWrap .formGroups::placeholder{
+    font-weight: 500;
+}
+
+.redLink{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--red);
+}
+
+.textRight{
+    text-align: right;
+}
+
+/* old code */
+
+
+.authenticationRight{
+    padding: 40px;
+    height: 100vh;
+    width: 100%;
+    max-width: calc(100% - 45%);
+    background: var(--white);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+/* old code ends */
+
+/* new login screen */
+
+.greyBoxWrap{
+    width: 100%;
+    height: 100%;
+    background: var(--grey3);
+    justify-content: center;
+    gap: 60px;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.loginHeading{
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 120%;
+    color: var(--black);
+}
+
+.loginText{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--black4);
+}
+
+.textWrap{
+    text-align: center;
+}
+
+/* new login screen ends */
+
+@media (min-width: 768px) and (max-width: 1600px){
+    .greyBoxWrap{
+        gap: 30px;
+    }
+    .centeredBG{
+        max-width: 60%;
+    }
+}

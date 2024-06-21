@@ -1,0 +1,324 @@
+.tableWrapper {
+    border-radius: 5px;
+    border: 1px solid var(--grey2);
+    background: var(--white);
+    overflow: auto;
+    max-height: calc(100vh - 91px);
+    height: 100%;
+    position: relative;
+    display: block;
+
+    /* height: 100vh; */
+}
+
+.darkHeaderTable thead {
+    background: var(--black);
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    z-index: 599;
+}
+
+.interviewCallRecord  .darkHeaderTable thead {
+    background: var(--black);
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    z-index: 6;
+}
+
+.darkHeaderTable .tableHeading {
+    padding: 10px 20px;
+    text-align: left;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    min-width: max-content;
+}
+
+.darkHeaderTable tbody tr td{
+    background: var(--grey4);
+}
+
+.darkHeaderTable tbody tr {
+    border-bottom: 1px solid var(--grey2);
+    /* cursor: pointer */
+}
+
+/* .blackHeadingTable tbody tr:hover {
+    background: var(--grey4);
+    transition: 0.4s ease-in-out;
+} */
+
+.darkHeaderTable tbody tr:nth-child(even) td{
+    background: var(--white);
+}
+
+.darkHeaderTable tbody .tableData:last-child .dropActionWrap{
+    top: 5px;
+}
+
+.darkHeaderTable tbody .tableData {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--black);
+    padding: 14px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    /* text-transform: lowercase; */
+    min-width: max-content;
+}
+
+/* .darkHeaderTable thead th:first-child .tableHeading,
+.darkHeaderTable tbody td:first-child .tableData{
+    padding-right: 0;
+} */
+
+.nameInitials{
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 120%;
+    padding: 5px;
+    width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    background: rgb(0 82 204 / 10%);
+    border-radius: 4px;
+}
+
+.trDisabled{
+    cursor: not-allowed;
+}
+
+.trDisabled .nameInitials{
+    background: rgb(163 163 163 / 10%);
+    color: var(--grey);
+}
+
+.trDisabled button{
+    cursor: not-allowed;
+    background: rgb(163 163 163 / 10%);
+    border-color: rgb(163 163 163 / 10%);
+    color: var(--grey);
+}
+
+.trDisabled button:hover{
+    background: rgb(163 163 163 / 10%);
+    border-color: rgb(163 163 163 / 10%);
+    color: var(--grey);
+}
+
+.darkHeaderTable.feedbackTable tbody .tableData{
+    padding: 8px 20px;
+}
+
+.feedbackTable .nameInitials{
+    background: rgb(163 163 163 / 10%);
+    color: var(--grey);
+}
+
+.darkHeaderTable.interviewTable tbody .tableData{
+    padding: 8px 20px;
+}
+
+.darkHeaderTable tbody .tableData.textBlue {
+    color: var(--blue);
+}
+
+.darkHeaderTable tbody .tableData.textRed {
+    color: var(--red);
+}
+
+.darkHeaderTable tbody .tableData.textGreen {
+    color: var(--green);
+}
+
+.ytagGreen {
+    color: var(--green);
+    background: #E5F3EF;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 7px;
+}
+
+.ytagRed {
+    color: var(--red);
+    background: #FCEBEB;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 7px;
+}
+
+.ytagClear {
+    color: var(--blue);
+    background: transparent;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 7px;
+}
+
+.ytagBlue {
+    color: var(--blue);
+    background: rgba(0, 82, 204, 0.1);
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 7px;
+}
+
+.ytagGrey {
+    color: var(--black);
+    background: #DFDFDF;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 7px;
+}
+
+.ytagDarkGrey {
+    color: var(--black);
+    background: #c2c0c0;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 7px;
+}
+
+.ytagYellow {
+    color: var(--yellow);
+    background: rgba(255, 184, 67, 0.1);
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 7px;
+}
+
+.ytaglighterBlue {
+    color: var(--lightBlue);
+    background: #eeeeee;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 7px;
+}
+
+.ytagpurple {
+    color: rgba(82, 67, 170, 1);
+    background: rgba(82, 67, 170, 0.1);
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 7px;
+}
+
+.toolTopBox {
+    position: absolute;
+}
+
+.tableHeading {
+    padding: 15px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 120%;
+    color: var(--black2);
+}
+
+.fullTable .tableHeading {
+    padding: 14px 20px;
+}
+
+.fullTable tbody .tableData {
+    font-size: 13px;
+}
+
+.fixTableHead {
+    overflow-y: auto;
+    max-height: 380px;
+}
+
+.fixTableHead thead th {
+    position: sticky;
+    top: 0;
+    background: var(--black);
+    z-index: 99;
+}
+
+.doubleMenu.wrapperBox .tableWrapper{
+    height: calc(100vh - 141px);
+    width: 100%;
+}
+
+.checkboxTable .darkHeaderTable th:first-child{
+    background: var(--black);
+}
+
+.checkboxTable .darkHeaderTable th:first-child,
+.checkboxTable .darkHeaderTable td:first-child{
+    width: 2%;
+    position: sticky;
+    left: 0;
+    z-index: 99;
+}
+
+.pos-unset{
+    position: unset !important;
+}
+
+.pr-20{
+    padding-right: 25px !important;
+}
+
+.checkboxTable .darkHeaderTable th:nth-child(2){
+    background: var(--black);
+}
+
+.checkboxTable .darkHeaderTable th:nth-child(2),
+.checkboxTable .darkHeaderTable td:nth-child(2){
+    position: sticky;
+    left: 34px;
+    z-index: 99;
+}
+
+.checkboxTable .darkHeaderTable th:first-child .tableHeading,
+.checkboxTable .darkHeaderTable td:first-child .tableData{
+    padding-right: 0;
+}
+
+.actionFix table th:last-child{
+    background: var(--black);
+}
+
+.actionFix table th:last-child,
+.actionFix table td:last-child{ 
+    position: sticky;
+    right: 0;
+    z-index: 99;
+}
+
+.tableData.nestedTable{
+    z-index: 99;
+    
+    table{
+        border-left: 1px solid var(--grey2);
+        border-right: 1px solid var(--grey2);
+    }
+}
+.pointer{
+    cursor: pointer;
+}

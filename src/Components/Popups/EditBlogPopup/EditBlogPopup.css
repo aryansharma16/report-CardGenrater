@@ -1,0 +1,15 @@
+.uploadField{
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+.imgPreview{
+    border-radius: 4px;
+    max-height: 59px;
+    max-width: 90px;
+    overflow: hidden;
+    width: 100%;
+}
+.customField{
+    width: 100%;
+}

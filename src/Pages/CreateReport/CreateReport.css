@@ -1,0 +1,17 @@
+.CreateEditorWrapper {
+  display: flex;
+}
+
+.TemplateEditor,
+.CodeResult {
+  flex: 1;
+}
+
+.TemplateEditor {
+  width: 50%;
+  height: 500px;
+}
+
+.CodeResult {
+  width: 50%;
+}

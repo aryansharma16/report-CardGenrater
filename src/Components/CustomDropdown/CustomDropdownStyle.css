@@ -1,0 +1,148 @@
+.customDropdownWrap{
+    cursor: pointer;
+    /* margin-left: 10px; */
+    flex-wrap: wrap;
+    padding: 8px 10px;
+    transition: 0.4s ease-in-out;
+}
+
+.customDropdownWrap:hover{
+    /* background: var(--grey3); */
+    background: transparent;
+    border-radius: 3px;
+    /* background: rgba(0, 82, 204, 0.1); */
+    transition: 0.4s ease-in-out;
+}
+
+.customDropdownWrap.current{
+    background: var(--grey3);
+    border-radius: 3px;
+}
+
+.customDropdownWrap:hover .dropDrop{
+    /* color: var(--blue); */
+    color: var(--black4);
+}
+
+.customDropdownWrap:hover svg path{
+    /* fill: #0052CC; */
+    fill: var(--black4);
+}
+
+.dropMenu{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dropDrop{
+    width: max-content;
+    gap: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--black3);
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dropMenu input{
+    display: none;
+}
+
+.dropMenuWindow{
+    width: 100%;
+    position: absolute;
+    top: calc(100% + 10px);
+    min-width: max-content;
+    /* min-width: 240px; */
+    padding: 8px;
+    background: var(--white);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    z-index: 610;
+    opacity: 0;
+    height: auto;
+    overflow: hidden;
+    visibility: hidden;
+    transition: 0.4s;
+    max-height: 200px;
+    left: 0;
+}
+
+.interviewCallRecord .dropMenuWindow {
+    left: unset;
+}
+
+.customDropdownWrap.active .dropMenuWindow{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.4s;
+    margin-bottom: 2px;
+    overflow: scroll;
+}
+
+.customDropdownWrap .dropDrop img{
+    transition: 0.4s ease-in-out;
+}
+
+.customDropdownWrap.active .dropDrop img{
+    transform: rotate(180deg);
+    transition: 0.4s ease-in-out;
+}
+
+.dropMenu{
+    width: 100%;
+    display: block;
+    position: relative;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 6px 8px;
+    background: var(--white);
+    transition: 0.3s ease-in-out;
+}
+
+.dropMenu:hover{
+    background: var(--grey3);
+    transition: 0.3s ease-in-out;
+}
+
+.customDropdownWrap label{
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 120%;
+    margin-bottom: 8px;
+}
+
+.customDropdownWrap label:last-child{
+    margin-bottom: 0;
+}
+
+.aboutTooltip {
+    visibility: hidden;
+    width: 215px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px; /* Use half of the width value (above) to center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+label:hover .aboutTooltip {
+    visibility: visible;
+    opacity: 1;
+}

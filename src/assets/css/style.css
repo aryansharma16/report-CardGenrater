@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+.container{
+    max-width: 100%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+.container2{
+    max-width: 80%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.flexbox{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: inherit;
+}
+
+.ml5{
+    margin-left: 5px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+
+/* skleton loader */
+
+@keyframes skeleton-glare {
+    to {
+        transform: translateX(100%)
+	}
+}
+
+.skletonLoader{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+}
+
+.skletonLoader::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--glare-bg);
+    transform: translateX(-100%);
+    animation: skeleton-glare 1.75s infinite ease-out;
+    z-index: 1;
+}
+
+.w100{
+    width: 100%;
+}
+
+::placeholder {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--grey);
+    font-family: 'inter';
+}
+
+/* file upload ssv */ 
+
+
+.csvFlexWrapdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.MsSnedDuebody {
+    padding: 30px 20px;
+}
+
+.MsSnedDueWarpPopup .popupContainer {
+    max-width: 779px;
+    width: 100%;
+}
+
+.msdueradiogroup {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.msdueradiogroup .labelWrap .checkmark {
+    border: 2px solid rgba(0, 82, 204, 1);
+}
+
+.msdueradiogroup .labelWrap .checkmark:after {
+    background: rgba(0, 82, 204, 1);
+}
+
+.msdueradiogroup .popupBody label {
+    color: #525252;
+}
+
+.msdueradiogroup .labelWrap input:checked+.radioText {
+    color: rgba(0, 82, 204, 1);
+}
+
+.MsSnedDuebody .InputAreamsdue {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.MsSnedDuebody .InputAreamsdue:nth-child(1) {
+    margin-top: 30px;
+}
+
+.InputAreamsdue .filterDrop:not(:first-child) {
+    margin-top: 0;
+}
+
+.InputAreamsdue .customDropdownWrap {
+    padding: 0;
+}
+
+.MsSnedDuebody .formGroups select,
+.MsSnedDuebody .formGroups input {
+    padding: 12px;
+}
+
+.MsSnedDuebody .formGroups label {
+    margin-bottom: 8px;
+}
+
+.MsSnedDuebody .customDropdownWrap .dropText {
+    color: #525252;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.dueActive {
+    display: none;
+}
+
+.dueActive.active {
+    display: block;
+}
+
+.dividerBorder {
+    border-top: 1px solid #E5E5E5;
+}
+
+.uploadStaffWrap {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.uploadStaffWrap .svgCrossIcon,
+.MspdfUploadData .svgCrossIcon {
+    position: absolute;
+    top: 52px;
+    right: 20px;
+    z-index: 1;
+    cursor: pointer;
+    width: max-content;
+}
+
+
+.uploadStaffWrap .svgCrossIcon svg path,
+.MspdfUploadData .svgCrossIcon svg path {
+    transition: 0.4s;
+}
+
+.uploadStaffWrap .svgCrossIcon:hover svg path,
+.MspdfUploadData .svgCrossIcon:hover svg path {
+    fill: #121212
+}
+
+.uploadStaffWrap h3 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 120%;
+    color: #676767;
+}
+
+.uploadStaffWrap label {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px dashed rgba(0, 82, 204, 0.30);
+    background: rgba(0, 82, 204, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 15px;
+    height: auto;
+    padding: 30px;
+}
+
+.uploadStaffWrap label svg {
+    width: 80px;
+    height: 80px;
+}
+
+.uploadStaffWrap label div span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #0F0F0F;
+}
+
+.MspdfUploadData {
+    border-radius: 4px;
+    border: 0.5px solid #E3E3E3;
+    background: #FFF;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 11px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+}
+
+.MspdfUploadData p {
+    color: #0F0F0F;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.MspdfUploadData span {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 10px;
+    background: #0052CC;
+    width: 1px;
+    transition: 1s;
+}
+
+.MspdfUploadData.active span {
+    width: 100%;
+}
+
+.MspdfUploadData .svgCrossIcon {
+    top: 10px;
+}
+
+.EmailDivdataMs {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #E5E5E5;
+    height: 184px;
+    margin-top: 20px;
+}
+
+.footermnPoup {
+    justify-content: flex-end;
+    border-top: 1px solid #E5E5E5;
+}
+
+.MssubtabHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.MssubtabHeading .text13 {
+    color: #121112;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.MsTbScrollwrap {
+    border-radius: 6px;
+    border: 1px solid #E5E5E5;
+    max-height: 250px;
+    overflow: auto;
+}
+
+.MssubtabHeading .SearchBox input {
+    background: #F5F5F5;
+    height: 32px;
+    border: none;
+}
+
+.MssubtabHeading .SearchBox {
+    background: #F5F5F5;
+    border-radius: 6px;
+    padding: 0 10px;
+}
+
+.MsTbScrollwrap .checboxWrap {
+    padding: 0;
+}
+
+.MsBtmAreasame {
+    width: 100%;
+}
+
+/* upload csv popup */
+
+.MsuploadCsvDrapwrap .popupContainer {
+    max-width: 540px;
+    width: 100%;
+    position: relative;
+}
+
+.MsuploadCsvDrapwrap .uploadtextMs {
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.MsuploadCsvDrapwrap .uploadtextMs h3 {
+    color: #0F0F0F;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.MsUploadCsvwrap .MspdfUploadData {
+    margin-bottom: 160px;
+}
+
+.MsUploadCsvwrap button {
+    opacity: 0.5;
+    width: 100%;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.MsUploadCsvwrap button:hover {
+    opacity: 1;
+}
+
+.uploadStaffWrap label {
+    background-image: url(https://cdn.mastersunion.org/assets/Uploadicon.png);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center 25%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px 10px;
+}
+
+.uploadStaffWrap label div {
+    flex-grow: unset;
+}
+
+.uploadStaffWrap label svg {
+    display: none;
+}
+
+.crossToggleCsv {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.uploadFlexWrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.uploadFlexWrap .textBlue{
+    font-weight: 400;
+    font-size: 13px;
+    cursor: pointer;
+    }
+
+    .textRedError{
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--red);
+        margin-bottom: 4px;
+    }
+
+    .MssubtabHeading.mssAddmt10{
+        margin-top: 22px;
+    }
+/* upload csv popup */
+
+#datepickerParent{
+    position: relative;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .container2 {
+        max-width: 95%;
+    }
+  }

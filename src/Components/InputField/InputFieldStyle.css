@@ -1,0 +1,57 @@
+.formGroups{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.formGroups label{
+    display: block;
+    position: relative;
+    font-size: 13px;
+    line-height: 120%;
+    color: var(--black2);
+    margin-bottom: 5px;
+}
+
+.impRed{
+    color: var(--red);
+}
+
+.formGroups select,
+.formGroups input{
+    background: var(--grey3);
+    min-height: 40px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--grey3);
+    border-radius: 10px;
+}
+
+.formGroups select:focus,
+.formGroups input:focus{
+    outline: none;
+}
+
+.FormError {
+    font-size: 12px;
+    color: var(--danger-5);
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    color: red;
+}
+
+.visible0{
+    visibility: hidden;
+}
+
+.inputIcon{
+    display: block;
+    line-height: 0;
+    position: absolute;
+    top: 21px;
+    right: 0;
+    padding: 14px 10px;
+    cursor: pointer;
+}

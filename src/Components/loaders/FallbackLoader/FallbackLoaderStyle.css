@@ -1,0 +1,25 @@
+.gradientLoader{
+    display: block;
+    position: relative;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #eee;
+}
+
+.gradientLoader::after{
+    content: '';
+    height: 4px;
+    background-image: linear-gradient(to right, var(--lightBlue), var(--lighterBlue));
+    display: block;
+    position: relative;
+    animation-name: leftRightLoader;
+    animation-duration: 0.2s;
+}
+
+@keyframes leftRightLoader {
+    0%    { width: 0%; }
+    100%  { width: 100%; }
+  }

@@ -1,0 +1,26 @@
+.notificationWrap{
+    min-height: 50px;
+    background: var(--white);
+    border-bottom: 1px solid var(--grey2);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+.notificationWrap svg{
+    cursor: pointer;
+}
+
+.welcomeText{
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: normal;
+    color: var(--black5);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}

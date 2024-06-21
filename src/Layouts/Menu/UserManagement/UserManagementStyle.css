@@ -1,0 +1,10 @@
+.userManageWrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.roleDropDown .dropMenuWindow{
+    left: unset;
+    right: 0;
+}

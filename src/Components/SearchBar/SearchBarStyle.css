@@ -1,0 +1,58 @@
+.SearchBox{
+    gap: 8px;
+    position: relative;
+}
+
+.SearchBox input{
+    border: none;
+    padding: 0;
+    max-width: 150px;
+    transition: 0.4s ease-in-out;
+    padding-right: 20px;
+    border-right: 1px solid var(--grey);
+}
+
+.SearchBox input:focus{
+    outline: none;
+    transition: 0.4s ease-in-out;
+    max-width: 200px;
+}
+
+.interviewSearch{
+    height: 50px;    
+    padding: 10px;                                                                                                                                              
+}
+
+.SearchBox input:focus + .close{
+    opacity: 1;
+    z-index: 99;
+    transition: 0.4s ease-in-out;
+}
+
+.SearchBox .close{
+    opacity: 0;
+    z-index: -99;
+    position: absolute;
+    border: none;
+    padding: 4px;
+    right: 4px;
+    top: -5px;
+    transition: 0.4s ease-in-out;
+}
+
+
+/* .SearchBox input:focus + .close{
+    transition: 0.4s ease-in-out; 
+    right: 20px;
+}
+
+.SearchBox .close{
+    opacity: 1;
+    z-index: 99;
+    position: absolute;
+    border: none;
+    padding: 2px;
+    right: 50px;
+    top: -3px;
+    transition: 0.4s ease-in-out;
+} */

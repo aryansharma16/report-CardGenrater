@@ -1,0 +1,95 @@
+.secondMenu{
+    padding: 10px;
+    height: 50px;
+    justify-content: space-between;
+}
+
+.SmenuMid{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.SmenuRight{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.SmenuRight button{
+    padding: 0;
+}
+
+.gridIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondMenu .dropMenuWindow{
+    right: 0;
+}
+
+.loadMoreWrapper{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.tableWrapper.wrapWithButton{
+    max-height: calc(100vh - 195px);
+}
+
+/* .secondMenu .customDropdownWrap{
+    background: var(--grey3);
+}
+
+.secondMenu .customDropdownWrap:hover{
+    background: var(--grey3);
+}
+
+.secondMenu .customDropdownWrap:hover .dropDrop{
+    color: var(--black3);
+}
+
+.secondMenu .customDropdownWrap:hover .dropDrop svg path{
+    fill: var(--black3);
+} */
+
+.SmenuRight.newButtonWrap button{
+    padding: 6px 8px;
+}
+
+.buttonFlexWrap{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    opacity: 0;
+    z-index: -1;
+    /* transition: 0.2s ease-in; */
+}
+
+.buttonFlexWrap.active{
+    opacity: 1;
+    z-index: 99;
+    animation: 0.2s fadeinleft linear;
+    /* transition: 0.2s ease-in; */
+}
+
+@keyframes fadeinleft {
+    0%{
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.noIconTable .tableHeading img{
+    display: none;
+}
+

@@ -1,0 +1,274 @@
+.button{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 6px 8px;
+    margin: 0;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--black3);
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.4s ease-in;
+}
+
+.button img{
+    max-width: 14px;
+}
+
+.iconButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 4px;
+}
+
+.BlueBorderButton{
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+
+.BlueBorderButton:not(:disabled):hover{
+    background: var(--blue);
+    transition: 0.4s ease-in-out;
+    color: var(--white);
+    transition: 0.4s ease-in;
+}
+.button.sendMail:disabled {
+    opacity: 0.6;
+    transition: 0.4s ease-in-out;
+}
+/* .button.BlueBorderButton.iconButton.sendMail:disabled {
+    display: none;
+} */
+.BlueBorderButton:not(:disabled):hover svg path{
+    stroke: var(--white);
+    transition: 0.4s ease-in;
+}
+
+.BlueBorderButton:hover img{
+    filter: brightness(10);
+    transition: 0.4s ease-in;
+}
+
+.BlueFillButton{
+    border: 1px solid var(--blue);
+    background: var(--blue);
+    color: var(--white);
+}
+
+.BlackFillButton{
+    border: 1px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+}
+
+.DarkblueFillButton{
+    border: 1px solid var(--darkblue);
+    background: var(--darkblue);
+    color: var(--white);
+}
+
+.GreyFillButton{
+    border: 1px solid var(--grey2);
+    background: var(--grey2);
+    color: var(--black);
+}
+
+.GreyBorderButton{
+    border: 1px solid var(--grey2);
+    background: var(--white);
+    color: var(--black);
+}
+
+.GreyBorderButton:hover{
+    border: 1px solid var(--grey2);
+    background: var(--grey2);
+    color: var(--black);
+}
+
+.BlackFillButton{
+    border: 1px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+}
+
+.RedFillButton{
+    border: 1px solid var(--red);
+    background: var(--red);
+    color: var(--white);
+}
+
+.RedBorderButton{
+    border: 1px solid var(--red);
+    background: var(--white);
+    color: var(--red);
+    transition: 0.4s ease-in;
+}
+
+.RedBorderButton:not(:disabled):hover{
+    background: var(--red);
+    color: var(--white);
+    transition: 0.4s ease-in;
+}
+
+.RedBorderButton:hover svg path{
+    transition: 0.4s ease-in;
+    stroke: var(--white);
+}
+
+.RedBorderButton:hover img{
+    filter: brightness(10);
+    transition: 0.4s ease-in;
+}
+
+.BlackBorderButton{
+    border: 1px solid var(--black);
+    background: var(--white);
+    color: var(--black);
+}
+
+.GreenFillButton{
+    border: 1px solid var(--green);
+    background: var(--green);
+    color: var(--white);
+}
+
+.GreenBorderButton{
+    border: 1px solid var(--green);
+    background: var(--white);
+    color: var(--green);
+}
+
+.GreenBorderButton:hover{
+    border: 1px solid var(--green);
+    background: var(--green);
+    color: var(--white);
+}
+
+.invertImg img{
+    filter: invert(1);
+}
+
+.blueTextButton{
+    color: var(--blue);
+}
+
+.reverseIcon{
+    flex-direction: row-reverse;
+}
+
+.loginButton{
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 40px;
+    padding: 15px;
+}
+
+.iconReversed{
+    flex-direction: row-reverse;
+}
+.GreenFillButton .overLapLoad{
+    background: var(--green);
+}
+
+.BlueFillButton .overLapLoad{
+    background: var(--blue);
+}
+
+.RedFillButton .overLapLoad{
+    background: var(--red);
+}
+
+.GreyFillButton .overLapLoad{
+    background: var(--grey2);
+}
+
+.overLapLoad{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: 0.4s ease-in;
+    z-index: -1;
+    opacity: 0;
+}
+
+.overLapLoad.true{
+    z-index: 9;
+    opacity: 1;
+}
+
+.overLapLoad::after{
+    content: '';
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    position: absolute;
+    left: calc(50% - 0.75em);
+    top: calc(50% - 0.75em);
+    border: 0.15em solid transparent;
+    border-right-color: white;
+    border-radius: 50%;
+    animation: button-anim 0.7s linear infinite;
+}
+
+.loadMoreButton{
+    max-width: 200px;
+}
+
+@keyframes button-anim {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.smallViewButton{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 120%;
+    gap: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 4px;
+    background: rgba(0, 82, 204, 0.10);
+    color: var(--blue);
+    min-width: max-content;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: unset;
+}
+
+/* ButtonStyle.css */
+
+
+@keyframes blink {
+    0% {
+      opacity: 1;
+      color: initial; /* Initial color */
+    }
+    50% {
+      opacity: 0;
+      color: red; /* Change color during the blink */
+    }
+    100% {
+      opacity: 1;
+      color: initial; /* Back to initial color */
+    }
+  }
+
+.button img.blink {
+  animation: blink 1s infinite;
+}

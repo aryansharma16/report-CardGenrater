@@ -1,0 +1,8 @@
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2.86426 6.9066C5.37259 4.96994 8.63343 4.96994 11.1418 6.9066" stroke="#E53935" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1.16675 4.8766C4.70175 2.1466 9.29841 2.1466 12.8334 4.8766" stroke="#E53935" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M3.96094 9.03576C5.79844 7.61243 8.19594 7.61243 10.0334 9.03576" stroke="#E53935" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5.4834 11.1707C6.40507 10.459 7.6009 10.459 8.52257 11.1707" stroke="#E53935" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Add a line to represent the strikethrough -->
+  <line x1="1" y1="1" x2="13" y2="13" stroke="#E53935" stroke-width="1"/>
+</svg>
