@@ -53,7 +53,7 @@ const AllBlogs = () => {
   const [previewPopup, setPreviewPopup] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isFilterSlider, setIsFilterSlider] = useState(false);
-
+  
   const intialFilter = {
     statusType: "all",
     fromDate: moment("2019-01-01").format("YYYY-MM-DD"),
@@ -358,8 +358,8 @@ const AllBlogs = () => {
       ) : (
         // <ComponentLoader />
         // <div>Loading the Report Cards</div>
-        // <PageLoader/>
-        <bookLoader/>
+        <PageLoader/>
+        
       )}
     </>
   );

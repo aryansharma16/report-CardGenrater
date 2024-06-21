@@ -25,6 +25,8 @@ import {
   getCardById,
 } from "../../redux/reportCard/reportCardSlice.js";
 import ConfigureAndSendEmail from "../../Components/SendEmail/ConfigureAndSendEmail.jsx";
+import PageLoader from "../../Components/loaders/PageLoader/PageLoader.js";
+import ComponentLoader from "../../Components/loaders/ComponentLoader/ComponentLoader.jsx";
 
 const CreatedReportCardInfo = () => {
   const roles = Cookies.get("roles");
@@ -39,6 +41,8 @@ const CreatedReportCardInfo = () => {
     singleReportCardsData,
     reportCardInfoData,
     isgetSingleCardsSliceSuccess,
+    isCreatereportCardInfoByBatchIDFetching,
+    isgetSingleReportCardFetching,
   } = useSelector((state) => state.reportCards);
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -288,192 +292,199 @@ const CreatedReportCardInfo = () => {
         onClickCreateBlog={handleCreatePopup}
         className={"dontShow"}
       />
-      <div className="wrapperBox doubleMenu">
-        <div className="tableWrapper wrapWithButton checkboxTable noIconTable actionFix">
-          <table className="darkHeaderTable">
-            <thead>
-              <tr>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    S.No
-                  </div>
-                </th>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Student Name
-                  </div>
-                </th>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Student Email
-                  </div>
-                </th>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Report Card Link
-                  </div>
-                </th>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Sent Status
-                  </div>
-                </th>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Template Name
-                  </div>
-                </th>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Created On
-                  </div>
-                </th>
-                <th>
-                  <div className="tableHeading">
-                    <label
-                      htmlFor="selectAllEmails"
-                      style={{ cursor: "pointer" }}
-                    >
-                      Select All
-                    </label>
-                    <input
-                      id="selectAllEmails"
-                      type="checkbox"
-                      className="selectUserForEmail"
-                      checked={
-                        selectedStudentsForEmail?.length ===
-                        reportCardInfoData?.length
-                      }
-                      onChange={handleSelectAll}
-                    />
-                  </div>
-                </th>
-                {/* <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Action
-                  </div>
-                </th> */}
-              </tr>
-            </thead>
-            <tbody>
-              {reportCardInfoData?.map((batch, index) => (
-                <tr key={batch?._id}>
-                  <td>
-                    <div
-                      className="tableData pointer"
-                      onClick={() => {
-                        navigate(`/batch-data?id=${batch?.id}`);
-                      }}
-                    >
-                      {index + 1}
+      {!isCreatereportCardInfoByBatchIDFetching &&
+      !isgetSingleReportCardFetching ? (
+        <div className="wrapperBox doubleMenu">
+          <div className="tableWrapper wrapWithButton checkboxTable noIconTable actionFix">
+            <table className="darkHeaderTable">
+              <thead>
+                <tr>
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      S.No
                     </div>
-                  </td>
-                  <td>
-                    <div className="tableData">{batch?.student_name}</div>
-                  </td>
-                  <td>
-                    <div className="tableData">{batch?.student_email}</div>
-                  </td>
-
-                  <td>
-                    <div className="tableData">
-                      {batch?.report_cdn_link?.length > 16 ? (
-                        <span>
-                          {batch?.report_cdn_link.substring(0, 16)}...
-                          <button
-                            className="copyCdnLink"
-                            onClick={() =>
-                              handleCopy(batch?.report_cdn_link, index)
-                            }
-                          >
-                            {copiedIndex === index ? "Copied!" : "Copy Link"}
-                          </button>
-                        </span>
-                      ) : (
-                        <span>
-                          {batch?.report_cdn_link}
-                          <button
-                            className="copyCdnLink"
-                            onClick={() =>
-                              handleCopy(batch?.report_cdn_link, index)
-                            }
-                          >
-                            {copiedIndex === index ? "Copied!" : "Copy Link"}
-                          </button>
-                        </span>
-                      )}
+                  </th>
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Student Name
                     </div>
-                  </td>
-                  <td>
-                    <div className="tableData">
-                      {batch?.status ? (
-                        <div className="yesStatus">Yes</div>
-                      ) : (
-                        <div className="noStatus">No</div>
-                      )}
+                  </th>
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Student Email
                     </div>
-                  </td>
-                  <td>
-                    <div className="tableData">
-                      {singleReportCardsData.cardName}
+                  </th>
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Report Card Link
                     </div>
-                  </td>
-                  <td>
-                    <div className="tableData">
-                      {moment(batch?.createdAt).format(
-                        "MMM DD YYYY, h:mm:ss A"
-                      )}
+                  </th>
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Sent Status
                     </div>
-                  </td>
-                  <td>
-                    <div className="tableData">
+                  </th>
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Template Name
+                    </div>
+                  </th>
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Created On
+                    </div>
+                  </th>
+                  <th>
+                    <div className="tableHeading">
+                      <label
+                        htmlFor="selectAllEmails"
+                        style={{ cursor: "pointer" }}
+                      >
+                        Select All
+                      </label>
                       <input
+                        id="selectAllEmails"
                         type="checkbox"
                         className="selectUserForEmail"
-                        checked={isSelected(batch?.id)}
-                        onChange={() =>
-                          handleSelectSingle(
-                            batch?.id,
-                            batch?.student_email,
-                            batch?.student_name,
-                            batch?.report_cdn_link
-                          )
+                        checked={
+                          selectedStudentsForEmail?.length ===
+                          reportCardInfoData?.length
                         }
+                        onChange={handleSelectAll}
                       />
                     </div>
-                  </td>
-                  {/* {!isAdmin && (
+                  </th>
+                  {/* <th>
+                <div className="tableHeading">
+                  <img src="/assets/svg/user.svg" alt="" />
+                  Action
+                </div>
+              </th> */}
+                </tr>
+              </thead>
+              <tbody>
+                {reportCardInfoData?.map((batch, index) => (
+                  <tr key={batch?._id}>
                     <td>
                       <div
-                        className="tableData"
-                        onClick={() => toggleActionDropdown(batch?.id, batch)}
+                        className="tableData pointer"
+                        onClick={() => {
+                          navigate(`/batch-data?id=${batch?.id}`);
+                        }}
                       >
-                        <img
-                          className="settingIcon"
-                          src="https://cdn.mastersunion.org/assets/dinero/setting.svg"
-                        />
-                        <DropActions
-                          isActive={isDropAction === batch?.id}
-                          dropActionOptions={dropActionOptions}
-                          batchId={batch?.id}
+                        {index + 1}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="tableData">{batch?.student_name}</div>
+                    </td>
+                    <td>
+                      <div className="tableData">{batch?.student_email}</div>
+                    </td>
+
+                    <td>
+                      <div className="tableData">
+                        {batch?.report_cdn_link?.length > 16 ? (
+                          <span>
+                            {batch?.report_cdn_link.substring(0, 16)}...
+                            <button
+                              className="copyCdnLink"
+                              onClick={() =>
+                                handleCopy(batch?.report_cdn_link, index)
+                              }
+                            >
+                              {copiedIndex === index ? "Copied!" : "Copy Link"}
+                            </button>
+                          </span>
+                        ) : (
+                          <span>
+                            {batch?.report_cdn_link}
+                            <button
+                              className="copyCdnLink"
+                              onClick={() =>
+                                handleCopy(batch?.report_cdn_link, index)
+                              }
+                            >
+                              {copiedIndex === index ? "Copied!" : "Copy Link"}
+                            </button>
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="tableData">
+                        {batch?.status ? (
+                          <div className="yesStatus">Yes</div>
+                        ) : (
+                          <div className="noStatus">No</div>
+                        )}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="tableData">
+                        {singleReportCardsData.cardName}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="tableData">
+                        {moment(batch?.createdAt).format(
+                          "MMM DD YYYY, h:mm:ss A"
+                        )}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="tableData">
+                        <input
+                          type="checkbox"
+                          className="selectUserForEmail"
+                          checked={isSelected(batch?.id)}
+                          onChange={() =>
+                            handleSelectSingle(
+                              batch?.id,
+                              batch?.student_email,
+                              batch?.student_name,
+                              batch?.report_cdn_link
+                            )
+                          }
                         />
                       </div>
                     </td>
-                  )} */}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    {/* {!isAdmin && (
+                  <td>
+                    <div
+                      className="tableData"
+                      onClick={() => toggleActionDropdown(batch?.id, batch)}
+                    >
+                      <img
+                        className="settingIcon"
+                        src="https://cdn.mastersunion.org/assets/dinero/setting.svg"
+                      />
+                      <DropActions
+                        isActive={isDropAction === batch?.id}
+                        dropActionOptions={dropActionOptions}
+                        batchId={batch?.id}
+                      />
+                    </div>
+                  </td>
+                )} */}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      ) : (
+        // <ComponentLoader />
+        // <div>Loading the Report Cards</div>
+        <PageLoader />
+      )}
     </>
   );
 };

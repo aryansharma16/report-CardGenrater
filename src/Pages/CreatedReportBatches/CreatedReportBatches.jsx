@@ -22,6 +22,8 @@ import {
   getAllCards,
   getAllReportBatch,
 } from "../../redux/reportCard/reportCardSlice.js";
+import PageLoader from "../../Components/loaders/PageLoader/PageLoader.js";
+import ComponentLoader from "../../Components/loaders/ComponentLoader/ComponentLoader.jsx";
 
 const CreatedReportBatches = () => {
   const roles = Cookies.get("roles");
@@ -31,6 +33,7 @@ const CreatedReportBatches = () => {
     isreportCardSliceError,
     reportCardSliceSuccessMessage,
     isDeleteReportCardFetching,
+    isgetAllReportBatchesFetching,
     allReportCardsData,
     allReportbatchesData,
   } = useSelector((state) => state.reportCards);
@@ -215,111 +218,120 @@ const CreatedReportBatches = () => {
         BlogsRightMenuoption={BlogsRightMenuoption}
         onClickCreateBlog={handleCreatePopup}
       />
-      <div className="wrapperBox doubleMenu">
-        <div className="tableWrapper wrapWithButton checkboxTable noIconTable actionFix">
-          <table className="darkHeaderTable">
-            <thead>
-              <tr>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Batch Name/Id
-                  </div>
-                </th>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Report Count by Batch
-                  </div>
-                </th>
 
-                {/* {isAdmin && (
+      {!isgetAllReportBatchesFetching ? (
+        <div className="wrapperBox doubleMenu">
+          <div className="tableWrapper wrapWithButton checkboxTable noIconTable actionFix">
+            <table className="darkHeaderTable">
+              <thead>
+                <tr>
                   <th>
                     <div className="tableHeading">
                       <img src="/assets/svg/user.svg" alt="" />
-                      Status
+                      Batch Name/Id
                     </div>
                   </th>
-                )} */}
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Report Count by Batch
+                    </div>
+                  </th>
+
+                  {/* {isAdmin && (
                 <th>
                   <div className="tableHeading">
                     <img src="/assets/svg/user.svg" alt="" />
-                    Created On
+                    Status
                   </div>
                 </th>
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Created By
-                  </div>
-                </th>
-
-                <th>
-                  <div className="tableHeading">
-                    <img src="/assets/svg/user.svg" alt="" />
-                    Action
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {allReportbatchesData?.map((batch, index) => (
-                <tr key={batch?._id}>
-                  <td>
-                    <div
-                      className="tableData pointer"
-                      onClick={() => {
-                        navigate(`/batch-data?id=${batch?.id}`);
-                      }}
-                    >
-                      {batch?.batchName}
+              )} */}
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Created On
                     </div>
-                  </td>
-                  <td>
-                    {/* <div className="tableData">{batch.batch_description}</div> */}
-                    <div className="tableData">{batch?.number_of_reports}</div>
-                  </td>
-
-                  <td>
-                    <div className="tableData">
-                      {moment(batch?.createdAt).format(
-                        "MMM DD YYYY, h:mm:ss A"
-                      )}
+                  </th>
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Created By
                     </div>
-                  </td>
+                  </th>
 
-                  <td>
-                    <div className="tableData">
-                      <div className="tableData">
-                        {batch?.creator?.firstName} {batch?.creator?.lastName}
-                      </div>
+                  <th>
+                    <div className="tableHeading">
+                      <img src="/assets/svg/user.svg" alt="" />
+                      Action
                     </div>
-                  </td>
-
-                  {!isAdmin && (
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {allReportbatchesData?.map((batch, index) => (
+                  <tr key={batch?._id}>
                     <td>
                       <div
-                        className="tableData"
-                        onClick={() => toggleActionDropdown(batch?.id, batch)}
+                        className="tableData pointer"
+                        onClick={() => {
+                          navigate(`/batch-data?id=${batch?.id}`);
+                        }}
                       >
-                        <img
-                          className="settingIcon"
-                          src="https://cdn.mastersunion.org/assets/dinero/setting.svg"
-                        />
-                        <DropActions
-                          isActive={isDropAction === batch?.id}
-                          dropActionOptions={dropActionOptions}
-                          batchId={batch?.id}
-                        />
+                        {batch?.batchName}
                       </div>
                     </td>
-                  )}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    <td>
+                      {/* <div className="tableData">{batch.batch_description}</div> */}
+                      <div className="tableData">
+                        {batch?.number_of_reports}
+                      </div>
+                    </td>
+
+                    <td>
+                      <div className="tableData">
+                        {moment(batch?.createdAt).format(
+                          "MMM DD YYYY, h:mm:ss A"
+                        )}
+                      </div>
+                    </td>
+
+                    <td>
+                      <div className="tableData">
+                        <div className="tableData">
+                          {batch?.creator?.firstName} {batch?.creator?.lastName}
+                        </div>
+                      </div>
+                    </td>
+
+                    {!isAdmin && (
+                      <td>
+                        <div
+                          className="tableData"
+                          onClick={() => toggleActionDropdown(batch?.id, batch)}
+                        >
+                          <img
+                            className="settingIcon"
+                            src="https://cdn.mastersunion.org/assets/dinero/setting.svg"
+                          />
+                          <DropActions
+                            isActive={isDropAction === batch?.id}
+                            dropActionOptions={dropActionOptions}
+                            batchId={batch?.id}
+                          />
+                        </div>
+                      </td>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      ) : (
+        //  <ComponentLoader />
+        // <div>Loading the Report Cards</div>
+        <PageLoader />
+      )}
     </>
   );
 };
