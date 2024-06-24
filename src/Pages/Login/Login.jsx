@@ -76,10 +76,16 @@ const Login = () => {
 
 
     dispatch(loginUser(formData));
+    console.log("User logged",isAuthSliceSuccess)
+  
   };
 
   const [type, setType] = useState(true);
-
+useEffect(()=>{
+  if(isAuthSliceSuccess){
+    navigate("/all-cards");
+  }
+},[isAuthSliceSuccess])
   const errorToast = () => {
     toast.error(authSliceErrorMessage, {
       // position: toast.POSITION.BOTTOM_CENTER,
@@ -116,9 +122,9 @@ const Login = () => {
               <img src="/assets/img/logo.png" alt="" />
             </span>
 
-            <h1 className="welcomeHeading mt-50">Masters'union Blogs</h1>
+            <h1 className="welcomeHeading mt-50">Masters'union Report Cards</h1>
             <p className="welcomeData mt-5">
-              It's an all-in-one online platform for handling mastersunion blogs.
+              It's an all-in-one online platform for handling mastersunion Students Report Cards and Emails.
             </p>
             <div className="loginWrap">
               <InputField
