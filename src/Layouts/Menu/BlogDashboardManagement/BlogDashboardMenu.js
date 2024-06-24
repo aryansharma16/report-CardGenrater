@@ -18,11 +18,11 @@ const BlogDashboardMenu = ({
     <header>
       <div className="secondMenu flexbox">
         <div className="SmenuLeft">
-          <SearchBar
+          {/* <SearchBar
             placeholder={"Search Blog..."}
             searchFunction={searchFunction}
             clearSearch={clearSearch}
-          />
+          /> */}
         </div>
         <div className="SmenuMid">
           Showing {currentCount} out of {totalCount}
