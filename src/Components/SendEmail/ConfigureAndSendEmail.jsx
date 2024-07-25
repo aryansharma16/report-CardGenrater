@@ -164,7 +164,7 @@ const ConfigureAndSendEmail = ({
   };
 
   const handleSendEmails = () => {
-    console.log("Sned Email Handler");
+    // console.log("Sned Email Handler");
     dispatch(sendEmailsToStudents(formData)).then((value) => {
       setFetchReportCardsAgain(!fetchReportCardsAgain);
       setSelectedStudentsForEmail([]);
@@ -177,7 +177,7 @@ const ConfigureAndSendEmail = ({
       setResetBit(false);
     }
   }, [isActive]);
-  console.log("data", emailTemplateID, "EmailsData.program", formData);
+  // console.log("data", emailTemplateID, "EmailsData.program", formData);
   return (
     <div className={`sideFilterBoxWrapper ${isActive && "active"}`}>
       <div className="sideFilterBox">

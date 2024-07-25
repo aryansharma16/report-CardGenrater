@@ -144,22 +144,22 @@ const CreatedReportCardInfo = () => {
     //  },
   ];
   const BlogsRightMenuoption = [
-    () => (
-      <CustomDropdown
-        className={"current"}
-        dropName={perPageDropName}
-        options={[
-          { name: "10", id: 10 },
-          { name: "20", id: 20 },
-          { name: "30", id: 30 },
-          { name: "40", id: 40 },
-          { name: "50", id: 50 },
-          { name: "Max", id: 100 },
-        ]}
-        isActive={isPerPageDrop}
-        setIsActive={setIsPerPageDrop}
-        onSelect={onChangePerPage}
-      />
+    () => (""
+      // <CustomDropdown
+      //   className={"current"}
+      //   dropName={perPageDropName}
+      //   options={[
+      //     { name: "10", id: 10 },
+      //     { name: "20", id: 20 },
+      //     { name: "30", id: 30 },
+      //     { name: "40", id: 40 },
+      //     { name: "50", id: 50 },
+      //     { name: "Max", id: 100 },
+      //   ]}
+      //   isActive={isPerPageDrop}
+      //   setIsActive={setIsPerPageDrop}
+      //   onSelect={onChangePerPage}
+      // />
     ),
     () => (
       <Button
